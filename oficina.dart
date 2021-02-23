@@ -17,7 +17,7 @@ class Calculadora {
 }
 
 void main() {
-  print("----OPERAÇÃO DESEJADA----\n");
+  print("----OPERAÇÃO DESEJADA---\n");
   print("1-SOMAR\n2-SUBTRAIR");
 
   int numero = int.parse(stdin.readLineSync());
