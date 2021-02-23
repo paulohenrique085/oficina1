@@ -10,7 +10,17 @@ class Calculadora {
 
   subtrair(double num1, double num2) {
     double resultado = num1 - num2;
-    return print(resultado);
+    return print("o resultado é: $resultado");
+  }
+
+  dividir(double num1, double num2) {
+    double resultado = num1 / num2;
+    return print("o resultado é: $resultado");
+  }
+
+  multiplicar(double num1, double num2) {
+    double resultado = num1 * num2;
+    return print("o resultado é: $resultado");
   }
 
   Calculadora({this.num1, this.num2});
@@ -18,15 +28,47 @@ class Calculadora {
 
 void main() {
   print("----OPERAÇÃO DESEJADA---\n");
-  print("1-SOMAR\n2 -SUBTRAIR");
+  print("1-SOMAR\n2-SUBTRAIR\n3-DIVIDIR\n4-MULTIPLICAR");
 
   int numero = int.parse(stdin.readLineSync());
-  if (numero == 1) {
-    print("digite o primeiro numero:");
-    double numero1 = double.parse(stdin.readLineSync());
-    print("digite o segundo numero:");
-    double numero2 = double.parse(stdin.readLineSync());
-    Calculadora soma = Calculadora(num1: numero1, num2: numero2);
-    soma.somar(numero1, numero2);
+
+  switch (numero) {
+    case 1:
+      print("digite o primeiro numero:");
+      double numero1 = double.parse(stdin.readLineSync());
+      print("digite o segundo numero:");
+      double numero2 = double.parse(stdin.readLineSync());
+      Calculadora soma = Calculadora(num1: numero1, num2: numero2);
+      soma.somar(numero1, numero2);
+      break;
+
+    case 2:
+      print("digite o primeiro numero:");
+      double numero1 = double.parse(stdin.readLineSync());
+      print("digite o segundo numero:");
+      double numero2 = double.parse(stdin.readLineSync());
+      Calculadora soma = Calculadora(num1: numero1, num2: numero2);
+      soma.subtrair(numero1, numero2);
+      break;
+
+    case 3:
+      print("digite o primeiro numero:");
+      double numero1 = double.parse(stdin.readLineSync());
+      print("digite o segundo numero:");
+      double numero2 = double.parse(stdin.readLineSync());
+      Calculadora soma = Calculadora(num1: numero1, num2: numero2);
+      soma.dividir(numero1, numero2);
+      break;
+
+    case 4:
+      print("digite o primeiro numero:");
+      double numero1 = double.parse(stdin.readLineSync());
+      print("digite o segundo numero:");
+      double numero2 = double.parse(stdin.readLineSync());
+      Calculadora soma = Calculadora(num1: numero1, num2: numero2);
+      soma.multiplicar(numero1, numero2);
+      break;
+
+    default:
   }
 }
