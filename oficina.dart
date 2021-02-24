@@ -27,48 +27,54 @@ class Calculadora {
 }
 
 void main() {
-  print("----OPERAÇÃO DESEJADA---\n");
-  print("1-SOMAR\n2-SUBTRAIR\n3-DIVIDIR\n4-MULTIPLICAR");
+  int controle = 1;
 
-  int numero = int.parse(stdin.readLineSync());
+  while (controle == 1) {
+    print("----OPERAÇÃO DESEJADA---\n");
+    print("1-SOMAR\n2-SUBTRAIR\n3-DIVIDIR\n4-MULTIPLICAR\n0-SAIR");
+    int numero = int.parse(stdin.readLineSync());
 
-  switch (numero) {
-    case 1:
-      print("digite o primeiro numero:");
-      double numero1 = double.parse(stdin.readLineSync());
-      print("digite o segundo numero:");
-      double numero2 = double.parse(stdin.readLineSync());
-      Calculadora soma = Calculadora(num1: numero1, num2: numero2);
-      soma.somar(numero1, numero2);
-      break;
+    switch (numero) {
+      case 1:
+        print("digite o primeiro numero:");
+        double numero1 = double.parse(stdin.readLineSync());
+        print("digite o segundo numero:");
+        double numero2 = double.parse(stdin.readLineSync());
+        Calculadora soma = Calculadora(num1: numero1, num2: numero2);
+        soma.somar(numero1, numero2);
+        break;
 
-    case 2:
-      print("digite o primeiro numero:");
-      double numero1 = double.parse(stdin.readLineSync());
-      print("digite o segundo numero:");
-      double numero2 = double.parse(stdin.readLineSync());
-      Calculadora soma = Calculadora(num1: numero1, num2: numero2);
-      soma.subtrair(numero1, numero2);
-      break;
+      case 2:
+        print("digite o primeiro numero:");
+        double numero1 = double.parse(stdin.readLineSync());
+        print("digite o segundo numero:");
+        double numero2 = double.parse(stdin.readLineSync());
+        Calculadora soma = Calculadora(num1: numero1, num2: numero2);
+        soma.subtrair(numero1, numero2);
+        break;
 
-    case 3:
-      print("digite o primeiro numero:");
-      double numero1 = double.parse(stdin.readLineSync());
-      print("digite o segundo numero:");
-      double numero2 = double.parse(stdin.readLineSync());
-      Calculadora soma = Calculadora(num1: numero1, num2: numero2);
-      soma.dividir(numero1, numero2);
-      break;
+      case 3:
+        print("digite o primeiro numero:");
+        double numero1 = double.parse(stdin.readLineSync());
+        print("digite o segundo numero:");
+        double numero2 = double.parse(stdin.readLineSync());
+        Calculadora soma = Calculadora(num1: numero1, num2: numero2);
+        soma.dividir(numero1, numero2);
+        break;
 
-    case 4:
-      print("digite o primeiro numero:");
-      double numero1 = double.parse(stdin.readLineSync());
-      print("digite o segundo numero:");
-      double numero2 = double.parse(stdin.readLineSync());
-      Calculadora soma = Calculadora(num1: numero1, num2: numero2);
-      soma.multiplicar(numero1, numero2);
-      break;
-
-    default:
+      case 4:
+        print("digite o primeiro numero:");
+        double numero1 = double.parse(stdin.readLineSync());
+        print("digite o segundo numero:");
+        double numero2 = double.parse(stdin.readLineSync());
+        Calculadora soma = Calculadora(num1: numero1, num2: numero2);
+        soma.multiplicar(numero1, numero2);
+        break;
+      case 0:
+        controle = 0;
+        print("obrigado, volte sempre!");
+        break;
+      default:
+    }
   }
 }
